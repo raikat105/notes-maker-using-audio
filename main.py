@@ -1,14 +1,14 @@
 import google.generativeai as genai
 import assemblyai as aai
 
-aai.settings.api_key = "99ab830bafe641de92bebb85e9a74ebc"
+aai.settings.api_key = ASSEMBLY_AI_API_KEY
 transcriber = aai.Transcriber()
 
-transcript = transcriber.transcribe("C:\\Users\\RAIKAT\\OneDrive\\Documents\\speech-ai\\audio.mp3")
+transcript = transcriber.transcribe(AUDIO_FILE)
 
 print("Transcripted text : " + transcript.text + "\n\n")
 
-genai.configure(api_key = "AIzaSyDvKzgA-SNGHwI2DjcqcNwCad-C0QjVsmU")
+genai.configure(api_key = GENAI_API_KEY)
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
